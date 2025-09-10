@@ -97,3 +97,11 @@
 2025-09-10 15:50:16.433      UserRouter:             Users loaded:         ["manuel","manuel2"] 
 2025-09-10 15:50:45.616      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
 2025-09-10 15:50:55.978      UserRouter:             User: "manuel" tryed to log in but he is not registerd. 
+2025-09-10 16:19:32.993      App listening on port 2005 
+2025-09-10 16:19:32.991      Server Startup! 
+2025-09-10 16:19:32.994      HTTP server running on port 80 
+2025-09-10 16:20:45.041      HTTP server running on port 80 
+2025-09-10 16:20:45.039      Server Startup! 
+2025-09-10 16:20:45.041      App listening on port 2005 
+2025-09-10 16:21:17.998      HTTP server running on port 80 
+2025-09-10 16:21:17.996      Server Startup! 

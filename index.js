@@ -20,16 +20,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-const port = 3000;
+// const port = 2005;
 
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`App listening on port ${port}`);
+// });
 
 
 
 //Ports Definieren //! Set host port on "httpsPort" and activate HTTPS
-// const httpPort = 80;
+const httpPort = 2005;
 // const httpsPort = 443;
 
 // // SSL-Zertifikate laden
@@ -39,13 +39,13 @@ app.listen(port, () => {
 // const credentials = { key: privateKey, cert: certificate };
 
 
-// app.use('/', express.static(path.join(__dirname, 'Frontend', 'main')));
+app.use('/', express.static(path.join(__dirname, 'Frontend', 'Landing')));
 // app.use('/user', express.static(path.join(__dirname, 'Frontend', 'user')));
 // app.use('/admin', express.static(path.join(__dirname, 'Frontend', 'admin-login')));
 
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'Frontend', 'main', 'main.html'));
-// });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'Landing', 'index.html'));
+});
 // app.get('/dashboard', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'Frontend', 'user', 'main.html'));
 // });
@@ -63,9 +63,9 @@ app.use("", (req, res) => {res.redirect('/')})
 
 
 // //HTTP-Server
-// http.createServer(app).listen(httpPort, () => {
-//   console.log(`HTTP server running on port ${httpPort}`);
-// });
+http.createServer(app).listen(httpPort, () => {
+  console.log(`HTTP server running on port ${httpPort}`);
+});
 
 // // HTTPS-Server
 // https.createServer(credentials, app).listen(httpsPort, () => {
