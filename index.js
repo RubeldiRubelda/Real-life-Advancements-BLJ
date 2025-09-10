@@ -9,19 +9,17 @@ const baseurl = "http://127.0.0.1"
 
 
 //Router Laden
-import {router as gamingtimeRouter} from "./Backend/routes/time/index.js"
-import {router as tasksRouter} from "./Backend/routes/tasks/index.js"
-import {router as userRouter} from "./Backend/routes/user/index.js"
-import {router as adminRouter} from "./Backend/routes/storage/index.js"
-import {router as loginRouter} from "./Backend/routes/login/index.js"
-import {router as shutdownRouter} from "./Backend/routes/shutdown/index.js"
+import {router as AchievementRouter} from "./Backend/routes/Achievements/script.js"
+import {router as ScoreRouter} from "./Backend/routes/Score/script.js"
+import {router as UserRouter} from "./Backend/routes/User-Register/script.js"
+
 
 //Setting Variables
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-//Ports Definieren
+//Ports Definieren //! Set host port on "httpsPort"
 const httpPort = 80;
 const httpsPort = 2007;
 
