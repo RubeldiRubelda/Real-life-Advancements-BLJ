@@ -1,0 +1,44 @@
+{
+  "name": "real-life-advancements-blj",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This was a project from the Basis Lehr Jahr that I had in the first half of my apprenticeship at Schindler.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RubeldiRubelda/Real-life-Advancements-BLJ.git"
+  },
+  "keywords": [
+    "RealLive",
+    "Advancement",
+    "Advancements",
+    "BLJ",
+    "BasisLehrJahr",
+    "RL",
+    "Reallive",
+    "Achievements",
+    "The12Forest",
+    "RuebeldiRueblda",
+    "ICTBZ",
+    "Git",
+    "Backend",
+    "Frontend"
+  ],
+  "author": "RuebeldiRubelda and The12Forest",
+  "license": "SEE LICENSE IN License.md",
+  "bugs": {
+    "url": "https://github.com/RubeldiRubelda/Real-life-Advancements-BLJ/issues"
+  },
+  "homepage": "https://github.com/RubeldiRubelda/Real-life-Advancements-BLJ#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "path": "^0.12.7",
+    "url": "^0.11.4"
+  }
+}

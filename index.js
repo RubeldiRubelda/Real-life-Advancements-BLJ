@@ -12,58 +12,65 @@ const baseurl = "http://127.0.0.1"
 import {router as AchievementRouter} from "./Backend/routes/Achievements/script.js"
 import {router as ScoreRouter} from "./Backend/routes/Score/script.js"
 import {router as UserRouter} from "./Backend/routes/User-Register/script.js"
-
+import {router as SaveRouter} from "./Backend/routes/Save/script.js"
 
 //Setting Variables
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-//Ports Definieren //! Set host port on "httpsPort"
-const httpPort = 80;
-const httpsPort = 2007;
 
-// SSL-Zertifikate laden
-const certPath = path.join(__dirname, 'Cert');
-const privateKey = fs.readFileSync(path.join(certPath, 'key.pem'), 'utf8');
-const certificate = fs.readFileSync(path.join(certPath, 'cert.pem'), 'utf8');
-const credentials = { key: privateKey, cert: certificate };
+const port = 3000;
 
-
-app.use('/', express.static(path.join(__dirname, 'Frontend', 'main')));
-app.use('/user', express.static(path.join(__dirname, 'Frontend', 'user')));
-app.use('/admin', express.static(path.join(__dirname, 'Frontend', 'admin-login')));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Frontend', 'main', 'main.html'));
-});
-app.get('/user', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Frontend', 'user', 'main.html'));
-});
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Frontend', 'admin-login', 'main.html'));
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
 });
 
-app.use("/api/time", gamingtimeRouter)
-app.use("/api/task", tasksRouter)
-app.use("/api/user", userRouter)
-app.use("/api/storage", adminRouter)
-app.use("/api/login", loginRouter)
-app.use("/api/shutdown", shutdownRouter)
+
+
+//Ports Definieren //! Set host port on "httpsPort" and activate HTTPS
+// const httpPort = 80;
+// const httpsPort = 443;
+
+// // SSL-Zertifikate laden
+// const certPath = path.join(__dirname, 'Cert');
+// const privateKey = fs.readFileSync(path.join(certPath, 'key.pem'), 'utf8');
+// const certificate = fs.readFileSync(path.join(certPath, 'cert.pem'), 'utf8');
+// const credentials = { key: privateKey, cert: certificate };
+
+
+// app.use('/', express.static(path.join(__dirname, 'Frontend', 'main')));
+// app.use('/user', express.static(path.join(__dirname, 'Frontend', 'user')));
+// app.use('/admin', express.static(path.join(__dirname, 'Frontend', 'admin-login')));
+
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'Frontend', 'main', 'main.html'));
+// });
+// app.get('/dashboard', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'Frontend', 'user', 'main.html'));
+// });
+// app.get('/admin', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'Frontend', 'admin-login', 'main.html'));
+// });
+
+app.use("/api/advancements", AchievementRouter)
+app.use("/api/score", ScoreRouter)
+app.use("/api/user", UserRouter)
+app.use("/api/admin", SaveRouter)
 
 app.get('/Main', (req, res) => {res.redirect('/')});
 app.use("", (req, res) => {res.redirect('/')})
 
 
-//HTTP-Server
-http.createServer(app).listen(httpPort, () => {
-  console.log(`HTTP server running on port ${httpPort}`);
-});
+// //HTTP-Server
+// http.createServer(app).listen(httpPort, () => {
+//   console.log(`HTTP server running on port ${httpPort}`);
+// });
 
-// HTTPS-Server
-https.createServer(credentials, app).listen(httpsPort, () => {
-  console.log(`HTTPS server running on port ${httpsPort}`);
-});
+// // HTTPS-Server
+// https.createServer(credentials, app).listen(httpsPort, () => {
+//   console.log(`HTTPS server running on port ${httpsPort}`);
+// });
 
 
 // Log
@@ -92,10 +99,10 @@ console.log = function(message, ...optionalParams) {
   originalLog(Time() + message, ...optionalParams);
 };
 
-fetch(baseurl + "/api/storage/load")
+// fetch(baseurl + "/api/storage/load")
+
+
 console.log("Server Startup!")
 
-        fetch("https://home.lmvz.org/api/webhook/manuelPCShutdown", {
-          method: "POST"
-        })
+
 export default app

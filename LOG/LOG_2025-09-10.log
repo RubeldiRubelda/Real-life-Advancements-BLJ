@@ -1,0 +1,99 @@
+2025-09-10 13:15:50.902      Server Startup! 
+2025-09-10 13:16:54.233      Server Startup! 
+2025-09-10 13:17:48.499      Server Startup! 
+2025-09-10 13:26:59.911      Server Startup! 
+2025-09-10 13:31:05.077      App listening on port 3000 
+2025-09-10 13:31:05.075      Server Startup! 
+2025-09-10 13:33:29.332      App listening on port 3000 
+2025-09-10 13:33:29.330      Server Startup! 
+2025-09-10 14:14:01.674      Server Startup! 
+2025-09-10 14:14:01.676      App listening on port 3000 
+2025-09-10 14:23:16.322      App listening on port 3000 
+2025-09-10 14:23:16.320      Server Startup! 
+2025-09-10 14:23:47.003      UserRouter:             -1 
+2025-09-10 14:36:38.555      App listening on port 3000 
+2025-09-10 14:36:38.553      Server Startup! 
+2025-09-10 14:37:20.808      UserRouter:             Created user: "manuel " with id "-1 " 
+2025-09-10 14:38:06.552      Server Startup! 
+2025-09-10 14:38:06.554      App listening on port 3000 
+2025-09-10 14:38:09.029      UserRouter:             Created user: "manuel " with id "0 " 
+2025-09-10 14:38:49.771      App listening on port 3000 
+2025-09-10 14:38:49.768      Server Startup! 
+2025-09-10 14:38:49.783      UserRouter:             Created user: "manuel " with id "0" 
+2025-09-10 14:39:03.329      UserRouter:             User already exits with name: "manuel" with the id: "0" 
+2025-09-10 14:39:11.357      UserRouter:             Created user: "asdf " with id "1" 
+2025-09-10 14:41:13.394      Server Startup! 
+2025-09-10 14:41:13.396      App listening on port 3000 
+2025-09-10 14:41:16.518      UserRouter:             Settings saved:         [] 
+2025-09-10 14:41:31.244      UserRouter:             Created user: "manuel " with id "0" 
+2025-09-10 14:41:34.023      UserRouter:             Created user: "asdfe " with id "1" 
+2025-09-10 14:41:36.727      UserRouter:             Created user: "asdfeiu " with id "2" 
+2025-09-10 14:41:39.077      UserRouter:             Created user: "awefpqa0owieroih " with id "3" 
+2025-09-10 14:41:49.042      UserRouter:             Created user: "asdfkjhasdfàààéLLéèéèéàéèöäöäöüöüö " with id "4" 
+2025-09-10 14:43:31.361      App listening on port 3000 
+2025-09-10 14:43:31.359      Server Startup! 
+2025-09-10 14:43:35.149      UserRouter:             Settings saved:         [] 
+2025-09-10 14:43:45.401      UserRouter:             Created user: "manuel " with id "0" 
+2025-09-10 14:43:50.490      UserRouter:             Created user: "asdfaw4er " with id "1" 
+2025-09-10 14:43:57.038      UserRouter:             Created user: "àöüüpäöpö_ààéèééàé_ " with id "2" 
+2025-09-10 14:44:03.241      UserRouter:             Created user: """ASDF""ASDF"ASDF"ASDF"ASDF"ASDF " with id "3" 
+2025-09-10 14:44:52.447      Server Startup! 
+2025-09-10 14:44:52.449      App listening on port 3000 
+2025-09-10 14:44:55.905      UserRouter:             Settings saved:         [] 
+2025-09-10 14:45:09.111      UserRouter:             Created user: "asdfkjhasdfàààéLLéèéèéàéèöäöäöüöüö " with id "0" 
+2025-09-10 14:45:11.615      UserRouter:             Created user: "asdf " with id "1" 
+2025-09-10 14:45:16.679      UserRouter:             Created user: "":}{"}{:":}{:{:":{}"{}:":" " with id "2" 
+2025-09-10 14:45:25.092      UserRouter:             Created user: "asdfasdflwerjasdf " with id "3" 
+2025-09-10 14:45:32.425      UserRouter:             Created user: "zxcmngsaefkjgàéèéPèéàé!è!èéà " with id "4" 
+2025-09-10 14:45:42.458      AdminRouter:            All data saved. 
+2025-09-10 14:45:42.494      UserRouter:             Settings saved:         ["asdfkjhasdfàààéLLéèéèéàéèöäöäöüöüö","asdf","\":}{\"}{:\":}{:{:\":{}\"{}:\":\"","asdfasdflwerjasdf","zxcmngsaefkjgàéèéPèéàé!è!èéà"] 
+2025-09-10 14:45:59.176      App listening on port 3000 
+2025-09-10 14:45:59.175      Server Startup! 
+2025-09-10 14:46:34.752      UserRouter:             Created user: "corn " with id "0" 
+2025-09-10 14:46:44.231      AdminRouter:            All data saved. 
+2025-09-10 14:46:44.271      UserRouter:             Settings saved:         ["corn"] 
+2025-09-10 14:53:25.121      UserRouter:             Created user: "masdfasdfasdfasdf " with id "1" 
+2025-09-10 14:53:40.377      AdminRouter:            All data saved. 
+2025-09-10 14:53:40.394      UserRouter:             Settings saved:         ["corn","masdfasdfasdfasdf"] 
+2025-09-10 14:58:48.697      App listening on port 3000 
+2025-09-10 14:58:48.695      Server Startup! 
+2025-09-10 15:25:47.448      App listening on port 3000 
+2025-09-10 15:25:47.446      Server Startup! 
+2025-09-10 15:28:54.267      UserRouter:             Created user: "manuel " with id "0" 
+2025-09-10 15:29:03.194      UserRouter:             Created user: "manuel2 " with id "1" 
+2025-09-10 15:29:15.170      AdminRouter:            All data saved. 
+2025-09-10 15:29:15.220      UserRouter:             Settings saved: Users: ["manuel","manuel2"] 
+2025-09-10 15:29:15.220      UserRouter:             Settings saved: Users: ["manuel","manuel2"] 
+2025-09-10 15:32:20.511      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:32:41.580      AdminRouter:            All data saved. 
+2025-09-10 15:32:41.614      UserRouter:             Settings saved: Users: ["manuel","manuel2"] 
+2025-09-10 15:32:41.614      UserRouter:             Settings saved: Users: ["manuel","manuel2"] 
+2025-09-10 15:33:08.171      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
+2025-09-10 15:33:14.060      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:33:17.213      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
+2025-09-10 15:33:34.263      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
+2025-09-10 15:33:39.388      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:33:39.921      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:33:40.099      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:33:40.276      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:33:40.658      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:33:40.987      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:33:41.192      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:33:41.369      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:33:41.559      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:35:04.458      App listening on port 3000 
+2025-09-10 15:35:04.456      Server Startup! 
+2025-09-10 15:35:14.402      AdminRouter:            All data loaded. 
+2025-09-10 15:35:14.443      UserRouter:             Passwords loaded:     ["asdfasdf","asdfasdf"] 
+2025-09-10 15:35:14.443      UserRouter:             Users loaded:         ["manuel","manuel2"] 
+2025-09-10 15:35:40.973      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:35:46.505      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
+2025-09-10 15:48:43.278      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:48:54.540      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
+2025-09-10 15:50:04.484      Server Startup! 
+2025-09-10 15:50:04.485      App listening on port 3000 
+2025-09-10 15:50:16.388      AdminRouter:            All data loaded. 
+2025-09-10 15:50:16.434      UserRouter:             Passwords loaded:     ["asdfasdf","asdfasdf"] 
+2025-09-10 15:50:16.433      UserRouter:             Users loaded:         ["manuel","manuel2"] 
+2025-09-10 15:50:45.616      UserRouter:             User: "manuel" was deleted with old id: "0" succesfully. 
+2025-09-10 15:50:55.978      UserRouter:             User: "manuel" tryed to log in but he is not registerd. 
