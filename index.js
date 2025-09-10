@@ -5,7 +5,7 @@ import https from 'https';
 import http from 'http';
 import { fileURLToPath } from 'url';
 
-const baseurl = "http://127.0.0.1"
+const baseurl = "http://127.0.0.1:80"
 
 
 //Router Laden
@@ -20,23 +20,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-// const port = 2005;
-
-// app.listen(port, () => {
-//   console.log(`App listening on port ${port}`);
-// });
-
-
 
 //Ports Definieren //! Set host port on "httpsPort" and activate HTTPS
-const httpPort = 2005;
-// const httpsPort = 443;
+const httpPort = 80;
+const httpsPort = 443;
 
 // // SSL-Zertifikate laden
-// const certPath = path.join(__dirname, 'Cert');
-// const privateKey = fs.readFileSync(path.join(certPath, 'key.pem'), 'utf8');
-// const certificate = fs.readFileSync(path.join(certPath, 'cert.pem'), 'utf8');
-// const credentials = { key: privateKey, cert: certificate };
+const certPath = path.join(__dirname, 'Cert');
+const privateKey = fs.readFileSync(path.join(certPath, 'key.pem'), 'utf8');
+const certificate = fs.readFileSync(path.join(certPath, 'cert.pem'), 'utf8');
+const credentials = { key: privateKey, cert: certificate };
 
 
 app.use('/', express.static(path.join(__dirname, 'Frontend', 'Landing')));
@@ -56,7 +49,7 @@ app.get('/', (req, res) => {
 app.use("/api/advancements", AchievementRouter)
 app.use("/api/score", ScoreRouter)
 app.use("/api/user", UserRouter)
-app.use("/api/admin", SaveRouter)
+app.use("/api/storage", SaveRouter)
 
 app.get('/Main', (req, res) => {res.redirect('/')});
 app.use("", (req, res) => {res.redirect('/')})
@@ -68,9 +61,9 @@ http.createServer(app).listen(httpPort, () => {
 });
 
 // // HTTPS-Server
-// https.createServer(credentials, app).listen(httpsPort, () => {
-//   console.log(`HTTPS server running on port ${httpsPort}`);
-// });
+https.createServer(credentials, app).listen(httpsPort, () => {
+  console.log(`HTTPS server running on port ${httpsPort}`);
+});
 
 
 // Log
@@ -99,10 +92,8 @@ console.log = function(message, ...optionalParams) {
   originalLog(Time() + message, ...optionalParams);
 };
 
-// fetch(baseurl + "/api/storage/load")
-
+fetch(baseurl + "/api/storage/load")
 
 console.log("Server Startup!")
-
 
 export default app

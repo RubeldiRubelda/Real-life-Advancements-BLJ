@@ -105,3 +105,21 @@
 2025-09-10 16:20:45.041      App listening on port 2005 
 2025-09-10 16:21:17.998      HTTP server running on port 80 
 2025-09-10 16:21:17.996      Server Startup! 
+2025-09-10 16:26:54.684      HTTP server running on port 2005 
+2025-09-10 16:26:54.682      Server Startup! 
+2025-09-10 16:33:06.405      HTTP server running on port 2005 
+2025-09-10 16:33:06.403      Server Startup! 
+2025-09-10 16:33:06.416      AdminRouter:            All data loaded. 
+2025-09-10 16:33:10.595      HTTP server running on port 2005 
+2025-09-10 16:33:10.593      Server Startup! 
+2025-09-10 16:33:47.088      HTTP server running on port 2005 
+2025-09-10 16:33:47.086      Server Startup! 
+2025-09-10 16:34:19.491      HTTP server running on port 2005 
+2025-09-10 16:34:19.489      Server Startup! 
+2025-09-10 16:35:20.872      Server Startup! 
+2025-09-10 16:35:20.873      HTTP server running on port 2005 
+2025-09-10 16:39:25.094      HTTP server running on port 2005 
+2025-09-10 16:39:25.093      Server Startup! 
+2025-09-10 16:39:25.107      AdminRouter:            All data loaded. 
+2025-09-10 16:39:25.131      UserRouter:             Passwords loaded:     ["asdfasdf","asdfasdf"] 
+2025-09-10 16:39:25.131      UserRouter:             Users loaded:         ["manuel","manuel2"] 
