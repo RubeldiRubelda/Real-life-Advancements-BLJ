@@ -23,7 +23,7 @@ const __dirname = path.dirname(__filename);
 
 //Ports Definieren //! Set host port on "httpsPort" and activate HTTPS
 const httpPort = 80;
-const httpsPort = 443;
+const httpsPort = 2005;
 
 // // SSL-Zertifikate laden
 const certPath = path.join(__dirname, 'Cert');
@@ -39,9 +39,9 @@ app.use('/', express.static(path.join(__dirname, 'Frontend', 'Landing')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'Frontend', 'Landing', 'index.html'));
 });
-// app.get('/dashboard', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'Frontend', 'user', 'main.html'));
-// });
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'login', 'login.html'));
+});
 // app.get('/admin', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'Frontend', 'admin-login', 'main.html'));
 // });
