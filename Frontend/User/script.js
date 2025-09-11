@@ -7,8 +7,28 @@ let Username = document.cookie.split('; ').find(row => row.startsWith('username=
 let Password = document.cookie.split('; ').find(row => row.startsWith('password='))?.split('=')[1];
 
 // Add Username
-let div = document.getElementById("usernameofuser");
-div.innerHTML = Username.charAt(0).toUpperCase() + Username.slice(1);
+let usernamediv = document.getElementById("usernameofuser");
+usernamediv.innerHTML = Username.charAt(0).toUpperCase() + Username.slice(1);
+
+
+
+let tasksdiv = document.getElementById("Container");
+
+
+tasksdiv.innerHTML += '         <div class="col-lg-2 col-sm-6">                              '
+tasksdiv.innerHTML += '            <div class="item">                                        '
+tasksdiv.innerHTML += '              <div class="icon">                                      '
+tasksdiv.innerHTML += '                <img src="assets/images/icon-06.png" alt="">          '
+tasksdiv.innerHTML += '              </div>                                                  '
+tasksdiv.innerHTML += '              <h4>Crypto Wallet</h4>                                  '
+tasksdiv.innerHTML += '              <h5 class="minifont">#Scammer</h5>                      '
+tasksdiv.innerHTML += '              <div class="icon-button">                               '
+tasksdiv.innerHTML += '                <a href="#"><i class="fa fa-angle-right"></i></a>     '
+tasksdiv.innerHTML += '              </div>                                                  '
+tasksdiv.innerHTML += '            </div>                                                    '
+tasksdiv.innerHTML += '        </div>                                                        '
+
+
 
 
 
