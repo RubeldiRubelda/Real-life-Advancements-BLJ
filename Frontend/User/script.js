@@ -13,11 +13,6 @@ div.innerHTML = Username.charAt(0).toUpperCase() + Username.slice(1);
 
 
 
-
-
-
-
-
 // Cookies löschen beim Ausloggen
 const logoutBtn = document.getElementById('startbacon');
 if (logoutBtn) {
