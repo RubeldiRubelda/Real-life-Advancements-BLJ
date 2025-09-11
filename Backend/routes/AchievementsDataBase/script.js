@@ -24,7 +24,7 @@ router.use("/load", (req, res) => {
   console.log(logprefix + "Discription loaded:   " + JSON.stringify(disciption))
   console.log(logprefix + "Images loaded:        " + JSON.stringify(image))
   console.log(logprefix + "Names loaded:         " + JSON.stringify(name))
-  res.json({"OK": true, "Discription": "Settings Loaded"})
+  res.json({"Okay": true, "Discription": "Settings Loaded"})
 })
 
 router.use("/get/discription", (req, res) => {
