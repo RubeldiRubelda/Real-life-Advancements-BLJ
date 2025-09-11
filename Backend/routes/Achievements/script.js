@@ -35,10 +35,10 @@ router.use("/user/add/:idendificator/:username", (req, res) => {
     for (let i = 0; i < taskpreset.length; i++) {
       task[userid].push(false)
     }
-    res.json({"OK": true, "Message": "User added."})
+    res.json({"Okay": true, "Message": "User added."})
     console.log(logprefix + "Added User: \"" + req.params.username + "\" with the ID: \"" + userid + "\"")
   } else {
-    res.json({"OK": false, "Error": "Password not correct.", "Message": "User NOT added."})
+    res.json({"Okay": false, "Error": "Password not correct.", "Message": "User NOT added."})
     console.log(logprefix + "Faild to add User: \"" + req.params.push + "\" beacause the wrong identificator was provided #IMPORTANT SOMEONE IS TRYING TO HACK YOU!!!!!!!!")
   }
 })
@@ -48,10 +48,10 @@ router.use("/user/del/:idendificator/:username", (req, res) => {
     let userid = users.indexOf(req.params.username)
     users.splice(userid, 1)
     task.splice(userid, 1)
-    res.json({"OK": true, "Message": "User deleted."})
+    res.json({"Okay": true, "Message": "User deleted."})
     console.log(logprefix + "Deleted User: \"" + req.params.username + "\" with the old ID: \"" + userid + "\"")
   } else {
-    res.json({"OK": false, "Error": "Password not correct.", "Message": "User NOT deleted."})
+    res.json({"Okay": false, "Error": "Password not correct.", "Message": "User NOT deleted."})
     console.log(logprefix + "Faild to delete User: \"" + req.params.push + "\" with the ID: \"" + userid + "\" beacause the wrong identificator was provided #IMPORTANT SOMEONE IS TRYING TO HACK YOU!!!!!!!!")
   }
 })
@@ -60,10 +60,10 @@ router.use("/done/:idendificator/:username/:taskid", (req, res) => {
   if (req.params.idendificator == "[nsJD!}9yLL]a=lB4}Juo(]y5(&xKg8Z") {
     let userid = users.indexOf(req.params.username)
     task[userid][req.params.taskid] = true
-    res.json({"OK": true, "Message": "Task marked as DONE"})
+    res.json({"Okay": true, "Message": "Task marked as DONE"})
     console.log(logprefix + "Task: \"" + req.params.taskid + "\" marked as done for the User: \"" + req.params.username + "\"")
   } else {
-    res.json({"OK": false, "Error": "Password not correct.", "Message": "Task NOT marked as DONE"})
+    res.json({"Okay": false, "Error": "Password not correct.", "Message": "Task NOT marked as DONE"})
     console.log(logprefix + "Task: \"" + req.params.taskid + "\" NOT marked as done for the User: \"" + req.params.username + "\" beacause the wrong identificator was provided #IMPORTANT SOMEONE IS TRYING TO HACK YOU!!!!!!!!")
   }
 })
@@ -76,14 +76,14 @@ router.use("/add/:idendificator/:taskname", (req, res) => {
       for (let i = 0; i < users.length; i++) {
         task[i - 1].push(false)
       }
-      res.json({"OK": true, "Message": "Task successfully added."})
+      res.json({"Okay": true, "Message": "Task successfully added."})
       console.log(logprefix + "Task: \"" + req.params.taskname + "\" succesfully added to ID: \"" + taskpreset.indexOf(req.params.taskname) + "\"")
     } else {
-      res.json({"OK": false, "Error": "Task: " + req.params.taskname + " already exist.", "Message": "Task NOT marked as DONE"})
+      res.json({"Okay": false, "Error": "Task: " + req.params.taskname + " already exist.", "Message": "Task NOT marked as DONE"})
       console.log(logprefix + "Task: \"" + req.params.taskname + "\" was not added beacause it already exists in the Taskpreset list.")
     }
   } else {
-    res.json({"OK": false, "Error": "Password not correct.", "Message": "Task NOT added!"})
+    res.json({"Okay": false, "Error": "Password not correct.", "Message": "Task NOT added!"})
     console.log(logprefix + "Task: \"" + req.params.taskname + "\" was not added beacause the wrong identificator was provided #IMPORTANT SOMEONE IS TRYING TO HACK YOU!!!!!!!!")
   }
 })
@@ -96,14 +96,14 @@ router.use("/del/:idendificator/:taskname", (req, res) => {
       for (let i = 0; i < users.length; i++) {
         task[i - 1].splice(taskid, 1)
       }
-      res.json({"OK": true, "Message": "Task successfully deleted."})
+      res.json({"Okay": true, "Message": "Task successfully deleted."})
       console.log(logprefix + "Task: \"" + req.params.taskname + "\" succesfully deleted with the old id ID: \"" + taskid + "\"")
     } else {
-      res.json({"OK": false, "Error": "Task: " + req.params.taskname + " dose not exist.", "Message": "Task NOT Deleted"})
+      res.json({"Okay": false, "Error": "Task: " + req.params.taskname + " dose not exist.", "Message": "Task NOT Deleted"})
       console.log(logprefix + "Task: \"" + req.params.taskname + "\" was not delted beacause it dose not exist in the Taskpreset list.")
     }
   } else {
-    res.json({"OK": false, "Error": "Password not correct.", "Message": "Task NOT deleted."})
+    res.json({"Okay": false, "Error": "Password not correct.", "Message": "Task NOT deleted."})
     console.log(logprefix + "Task: \"" + req.params.taskname + "\" was not deleted beacause the wrong identificator was provided #IMPORTANT SOMEONE IS TRYING TO HACK YOU!!!!!!!!")
   }
 })
@@ -114,10 +114,10 @@ router.use("/get/:username/:passwd",async (req, res) => {
   let response = await fetch(`${baseurl}/api/user/check/${username}/${passwd}`);
   response = await response.json(); // converts response body -> JS object
   
-  if (response.OK) {
+  if (response.Okay) {
     res.json(JSON.parse(Usertask))
   } else {
-    res.json({"OK": false, "Error": "User or password wrong!", "Message": "Coud not securely send Data."})
+    res.json({"Okay": false, "Error": "User or password wrong!", "Message": "Coud not securely send Data."})
   }
 })
 
