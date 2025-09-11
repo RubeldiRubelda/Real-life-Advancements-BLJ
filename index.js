@@ -5,7 +5,7 @@ import https from 'https';
 import http from 'http';
 import { fileURLToPath } from 'url';
 
-const baseurl = "https://127.0.0.1:2005"
+const baseurl = "http://127.0.0.1:2005"
 
 
 //Router Laden
@@ -22,8 +22,8 @@ const __dirname = path.dirname(__filename);
 
 
 //Ports Definieren //! Set host port on "httpsPort" and activate HTTPS
-const httpPort = 2005;
-const httpsPort = 443;
+const httpPort = 80;
+const httpsPort = 2005;
 
 // SSL-Zertifikate laden
 const certPath = path.join(__dirname, 'Cert');
