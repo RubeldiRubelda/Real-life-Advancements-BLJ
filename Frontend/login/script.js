@@ -17,7 +17,7 @@ document.querySelector(".login-form").addEventListener("submit", async (e) => {
 
   try {
     // Statt JSON bekommst du nun HTML zurück
-    const response = await fetch(baseurl + "/api/login/" + username + "/" + hash);
+    const response = await fetch(baseurl + "/api/user/login/" + username + "/" + hash);
 
     if (response.ok) {
         document.cookie = "username=" + username + "; path=/";
