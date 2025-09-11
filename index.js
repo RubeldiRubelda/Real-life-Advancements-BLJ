@@ -10,6 +10,7 @@ import {router as AchievementRouter} from "./Backend/routes/Achievements/script.
 import {router as ScoreRouter} from "./Backend/routes/Score/script.js"
 import {router as UserRouter} from "./Backend/routes/User-Register/script.js"
 import {router as SaveRouter} from "./Backend/routes/Save/script.js"
+import {router as TaskDBRouter} from "./Backend/routes/AchievementsDataBase/script.js"
 
 //Setting Variables
 const app = express();
@@ -49,7 +50,7 @@ app.use("/api/advancements", AchievementRouter)
 app.use("/api/score", ScoreRouter)
 app.use("/api/user", UserRouter)
 app.use("/api/storage", SaveRouter)
-
+app.use("/api/TDB", TaskDBRouter)
 
 // app.get('/Main', (req, res) => {res.redirect('/')});
 // app.use("", (req, res) => {res.redirect('/')})
