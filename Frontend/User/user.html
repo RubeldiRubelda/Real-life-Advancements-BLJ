@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
 <!--
 
 TemplateMo 577 Liberty Market
@@ -76,10 +77,7 @@ https://templatemo.com/tm-577-liberty-market
                         <li><a href="#" class="loginbutton" id="startbacon">Ausloggen 🚪</a></li>
                         <li><a href="https://techsvc.de" target="_blank">⚡ by Techsvc.de</a></li>
                     </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
+
                 </nav>
             </div>
         </div>
@@ -94,7 +92,7 @@ https://templatemo.com/tm-577-liberty-market
         <div class="col-lg-6 align-self-center">
           <div class="header-text">
             <h6>Hallo <span id="username">{Username}</span></h6>
-            <h2>Deine Aktuelle Punktzahl: {Points}</h2>
+            <h2>Deine aktuelle Punktzahl: <span>{PUNKTE}</span></h2>
 
                 
             </div>
@@ -210,25 +208,20 @@ https://templatemo.com/tm-577-liberty-market
         <div class="col-lg-12">
           <p>Verantwortlich für diesen Webinhalt gemäss § 55 Abs. 2 RStV: Benjamin Kunz & Manuel Waldburger 
           <br><br>
-          <a title="HTML CSS Templates" rel="sponsored" href="../Datenschutz/datenschutz.html" target="_blank">Datenschutzhinweise</a></p>
+          <a title="HTML CSS Templates" rel="sponsored" href="/datenschutz" target="_blank">Datenschutzhinweise</a></p>
+          <a href="/" class="loginbutton" id="startbacon">Ausloggen 🚪</a>
         </div>
       
       </div>
+      
     </div>
   </footer>
+  
 
 
 
   <script>
-  // Hamburger Menü für mobile Ansicht
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuTrigger = document.querySelector('.menu-trigger');
-    const nav = document.querySelector('.main-nav ul.nav');
-    menuTrigger.addEventListener('click', function(e) {
-      e.preventDefault();
-      nav.classList.toggle('active');
-      menuTrigger.classList.toggle('active');
-    });
+
 
 
 
@@ -244,7 +237,7 @@ https://templatemo.com/tm-577-liberty-market
           document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
         });
         // Optional: Weiterleitung zur Login-Seite
-        window.location.href = '/login';
+        window.location.href = '/';
       });
     }
   });

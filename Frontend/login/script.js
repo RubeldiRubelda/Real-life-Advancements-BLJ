@@ -22,6 +22,7 @@ document.querySelector(".login-form").addEventListener("submit", async (e) => {
     if (response.ok) {
         document.cookie = "username=" + username + "; path=/";
         document.cookie = "password=" + hash + "; path=/";
+        window.location.href = "/user";
     } else {
       alert("Zugang verweigert");
     }
