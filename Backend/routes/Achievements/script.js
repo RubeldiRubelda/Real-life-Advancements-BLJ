@@ -107,7 +107,7 @@ router.use("/del/:idendificator/:taskname", (req, res) => {
   }
 })
 
-router.use("/", (req, res) => {
+router.use("/get/:username/:passwd", (req, res) => {
   res.json(JSON.parse(taskpreset))
   console.log(logprefix + "Sent all tasks to a Request")
 })
