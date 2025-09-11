@@ -18,13 +18,24 @@ router.use("/save", (req, res) => {
 })
 
 router.use("/load", (req, res) => {
-  disciption = JSON.parse(fs.readFileSync("./Backend/saves/task_times.json"))
-  image = JSON.parse(fs.readFileSync("./Backend/saves/tasks.json"))
-  name = JSON.parse(fs.readFileSync("./Backend/saves/user.json"))
-  console.log(logprefix + "Times loaded:         " + JSON.stringify(task_times))
-  console.log(logprefix + "Tasks loaded:         " + JSON.stringify(tasks))
-  console.log(logprefix + "Users loaded:         " + JSON.stringify(users))
-  res.json(tasks)
+  disciption = JSON.parse(fs.readFileSync("./Backend/saves/advancement-description.json"))
+  image = JSON.parse(fs.readFileSync("./Backend/saves/advancement-icon.json"))
+  name = JSON.parse(fs.readFileSync("./Backend/saves/advancement-preset.json"))
+  console.log(logprefix + "Discription loaded:   " + JSON.stringify(disciption))
+  console.log(logprefix + "Images loaded:        " + JSON.stringify(image))
+  console.log(logprefix + "Names loaded:         " + JSON.stringify(name))
+  res.json({"OK": true, "Discription": "Settings Loaded"})
 })
 
+router.use("/get/discription", (req, res) => {
+    res.json(disciption)
+})
+
+router.use("/get/image", (req, res) => {
+    res.json(image)
+})
+
+router.use("/get/name", (req, res) => {
+    res.json(name)
+})
 export { router }
