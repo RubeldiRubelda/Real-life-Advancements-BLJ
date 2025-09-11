@@ -6,9 +6,15 @@ document.querySelector(".login-form").addEventListener("submit", async (e) => {
 
   const username = e.target[0].value.trim();
   const password = e.target[1].value;
+  const password2 = e.target[2].value;
 
-  if (!username || !password) {
+  if (!username || !password || !password2) {
     alert("Bitte Benutzername und Passwort eingeben.");
+    return;
+  }
+
+  if (password !== password2) {
+    alert("Passwörter stimmen nicht überein.");
     return;
   }
 
@@ -16,19 +22,18 @@ document.querySelector(".login-form").addEventListener("submit", async (e) => {
   const hash = await sha256(combined);
 
   try {
-    // Statt JSON bekommst du nun HTML zurück
-    const response = await fetch(baseurl + "/api/user/login/" + username + "/" + hash);
+    const response = await fetch(baseurl + "/api/user/add/" + username + "/" + hash);
 
     if (response.Okay) {
         document.cookie = "username=" + username + "; path=/";
         document.cookie = "password=" + hash + "; path=/";
         window.location.href = "/user";
     } else {
-      alert("Zugang verweigert");
+      alert("Serverside Error, please contact support");
     }
   } catch (error) {
     console.error("Fehler beim Login:", error);
-    alert("Login fehlgeschlagen.");
+    alert("Registrierung fehlgeschlagen.");
   }
 
 });
