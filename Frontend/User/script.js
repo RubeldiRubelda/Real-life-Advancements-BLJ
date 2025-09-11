@@ -6,7 +6,8 @@ let Username = document.cookie.split('; ').find(row => row.startsWith('username=
 let Password = document.cookie.split('; ').find(row => row.startsWith('password='))?.split('=')[1];
 
 let div = document.getElementById("usernameofuser");
-div.innerHTML = Username.charAt(0).toUpperCase() + variable.slice(1);
+div.innerHTML = Username
+console.log(Username)
 
 
 
