@@ -1,27 +1,12 @@
-2025-09-11 08:59:35.562      Server Startup! 
-2025-09-11 08:59:35.563      HTTP server running on port 80 
-2025-09-11 08:59:35.564      HTTPS server running on port 2005 
-2025-09-11 08:59:35.576      AdminRouter:            All data loaded. 
-2025-09-11 08:59:35.601      UserRouter:             Users loaded:         ["manuel","manuel2"] 
-2025-09-11 08:59:35.602      UserRouter:             Passwords loaded:     ["9ab4d25aadeee631e24e2c677b2c7fdabde0619c11be0139e0b632436849b5a6","9ab4d25aadeee631e24e2c677b2c7fdabde0619c11be0139e0b632436849b5a6"] 
-2025-09-11 09:02:33.637      HTTP server running on port 80 
-2025-09-11 09:02:33.635      Server Startup! 
-2025-09-11 09:02:33.638      HTTPS server running on port 2005 
-2025-09-11 09:02:33.657      AdminRouter:            All data loaded. 
-2025-09-11 09:02:33.691      UserRouter:             Users loaded:         ["manuel","manuel2"] 
-2025-09-11 09:02:33.692      UserRouter:             Passwords loaded:     ["9ab4d25aadeee631e24e2c677b2c7fdabde0619c11be0139e0b632436849b5a6","9ab4d25aadeee631e24e2c677b2c7fdabde0619c11be0139e0b632436849b5a6"] 
-2025-09-11 09:05:40.389      HTTP server running on port 2005 
-2025-09-11 09:05:40.390      HTTPS server running on port 443 
-2025-09-11 09:05:40.387      Server Startup! 
-2025-09-11 09:05:40.407      AdminRouter:            All data loaded. 
-2025-09-11 09:05:40.447      UserRouter:             Users loaded:         ["manuel","manuel2"] 
-2025-09-11 09:05:40.448      UserRouter:             Passwords loaded:     ["9ab4d25aadeee631e24e2c677b2c7fdabde0619c11be0139e0b632436849b5a6","9ab4d25aadeee631e24e2c677b2c7fdabde0619c11be0139e0b632436849b5a6"] 
-2025-09-11 09:07:33.789      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
-2025-09-11 09:10:28.637      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
-2025-09-11 09:10:29.780      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
-2025-09-11 09:10:30.523      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
-2025-09-11 09:10:32.331      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
-2025-09-11 09:10:32.456      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
-2025-09-11 09:15:48.168      Server Startup! 
-2025-09-11 09:15:48.171      HTTPS server running on port 2005 
-2025-09-11 09:15:48.170      HTTP server running on port 80 
+2025-09-11 08:22:58.514      HTTP server running on port 80 
+2025-09-11 08:22:58.514      HTTPS server running on port 2005 
+2025-09-11 08:22:58.512      Server Startup! 
+2025-09-11 08:22:58.529      AdminRouter:            All data loaded. 
+2025-09-11 08:22:58.553      UserRouter:             Passwords loaded:     ["asdfasdf","asdfasdf"] 
+2025-09-11 08:22:58.552      UserRouter:             Users loaded:         ["manuel","manuel2"] 
+2025-09-11 08:27:19.022      HTTPS server running on port 2005 
+2025-09-11 08:27:19.020      Server Startup! 
+2025-09-11 08:27:19.022      HTTP server running on port 80 
+2025-09-11 08:27:19.037      AdminRouter:            All data loaded. 
+2025-09-11 08:27:19.064      UserRouter:             Users loaded:         ["manuel","manuel2"] 
+2025-09-11 08:27:19.064      UserRouter:             Passwords loaded:     ["asdfasdf","asdfasdf"] 
