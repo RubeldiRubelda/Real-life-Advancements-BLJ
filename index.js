@@ -33,7 +33,7 @@ const credentials = { key: privateKey, cert: certificate };
 
 
 app.use('/', express.static(path.join(__dirname, 'Frontend', 'Landing')));
-// app.use('/user', express.static(path.join(__dirname, 'Frontend', 'user')));
+app.use('/login', express.static(path.join(__dirname, 'Frontend', 'login')));
 // app.use('/admin', express.static(path.join(__dirname, 'Frontend', 'admin-login')));
 
 app.get('/', (req, res) => {
