@@ -21,9 +21,9 @@ router.use("/load", (req, res) => {
   task = JSON.parse(fs.readFileSync("./Backend/saves/advancement-user.json"))
   users = JSON.parse(fs.readFileSync("./Backend/saves/user.json"))
   console.log(logprefix + "Taskpreset loaded:    " + JSON.stringify(taskpreset))
-  console.log(logprefix + "Usertasks loaded:     " + JSON.stringify(tasks))
+  console.log(logprefix + "Usertasks loaded:     " + JSON.stringify(task))
   console.log(logprefix + "Users loaded:         " + JSON.stringify(users))
-  res.json(tasks)
+  res.json(task)
 })
 
 router.use("/user/add/:idendificator/:username", (req, res) => {
