@@ -22,7 +22,8 @@ document.querySelector(".login-form").addEventListener("submit", async (e) => {
   const hash = await sha256(combined);
 
   try {
-    const response = await fetch(baseurl + "/api/user/add/" + username + "/" + hash);
+    let response = await fetch(baseurl + "/api/user/add/" + username + "/" + hash);
+    response = await response.json();
 
     if (response.Okay) {
         document.cookie = "username=" + username + "; path=/";
