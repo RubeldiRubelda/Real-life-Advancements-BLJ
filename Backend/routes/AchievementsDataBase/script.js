@@ -26,3 +26,5 @@ router.use("/load", (req, res) => {
   console.log(logprefix + "Users loaded:         " + JSON.stringify(users))
   res.json(tasks)
 })
+
+export { router }
