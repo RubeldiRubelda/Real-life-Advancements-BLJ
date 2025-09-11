@@ -51,8 +51,8 @@ app.use("/api/score", ScoreRouter)
 app.use("/api/user", UserRouter)
 app.use("/api/storage", SaveRouter)
 
-app.get('/Main', (req, res) => {res.redirect('/')});
-app.use("", (req, res) => {res.redirect('/')})
+// app.get('/Main', (req, res) => {res.redirect('/')});
+// app.use("", (req, res) => {res.redirect('/')})
 
 
 // //HTTP-Server
