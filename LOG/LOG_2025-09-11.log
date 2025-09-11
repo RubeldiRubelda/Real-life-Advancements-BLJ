@@ -22,3 +22,6 @@
 2025-09-11 09:10:30.523      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
 2025-09-11 09:10:32.331      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
 2025-09-11 09:10:32.456      UserRouter:             User: "manuel" logged in with id: "0" succesfully. 
+2025-09-11 09:15:48.168      Server Startup! 
+2025-09-11 09:15:48.171      HTTPS server running on port 2005 
+2025-09-11 09:15:48.170      HTTP server running on port 80 

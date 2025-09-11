@@ -1,7 +1,7 @@
 import express from "express"
 const router = express.Router()
 const logprefix = "AdminRouter:            "
-const baseurl = "http://127.0.0.1:2005"
+const baseurl = "http://127.0.0.1:80"
 
 router.use("/save", (req, res) => {
     console.log(logprefix + "All data saved.")
