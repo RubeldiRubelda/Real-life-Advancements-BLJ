@@ -2,6 +2,8 @@ import express from "express"
 import fs from 'fs';
 const router = express.Router()
 const logprefix = "UserRouter:             "
+const baseurl = "http://127.0.0.1:80"
+
 let user = []
 let passwords = []
 
@@ -32,6 +34,7 @@ router.use("/add/:user/:pw", (req, res) => {
         user.push(req.params.user)
         passwords.push(req.params.pw)
         userid = user.indexOf(req.params.user)
+        fetch(baseurl + "/api/advancements/user/add/[nsJD!}9yLL]a=lB4}Juo(]y5(&xKg8Z/" + req.params.user)
         res.json({"OK": true, "UserID": userid})
         console.log(logprefix + "Created user: \"" + req.params.user + " \" with id \"" + userid + "\"")
     } else {

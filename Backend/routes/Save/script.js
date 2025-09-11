@@ -6,7 +6,7 @@ const baseurl = "http://127.0.0.1:80"
 router.use("/save", (req, res) => {
     console.log(logprefix + "All data saved.")
     // fetch(baseurl + "/api/advancements/save")
-    // fetch(baseurl + "/api/score/save")
+    fetch(baseurl + "/api/advancements/save")
     fetch(baseurl + "/api/user/save")
     res.send("All data saved.")
 })
@@ -14,7 +14,7 @@ router.use("/save", (req, res) => {
 router.use("/load", (req, res) => {
     console.log(logprefix + "All data loaded.")
     // fetch(baseurl + "/api/advancements/load")
-    // fetch(baseurl + "/api/score/load")
+    fetch(baseurl + "/api/advancements/load")
     fetch(baseurl + "/api/user/load")
     res.send("All data loaded.")
 })
