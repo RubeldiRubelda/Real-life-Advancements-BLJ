@@ -30,6 +30,7 @@ document.querySelector(".login-form").addEventListener("submit", async (e) => {
         window.location.href = "/user";
     } else {
       alert("Serverside Error, please contact support");
+      console.log(response)
     }
   } catch (error) {
     console.error("Fehler beim Login:", error);
