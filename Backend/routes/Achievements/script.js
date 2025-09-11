@@ -2,6 +2,7 @@ import express from "express"
 import fs from 'fs';
 const router = express.Router()
 const logprefix = "AchievementsRouter:     "
+const baseurl = "http://127.0.0.1"
 let taskpreset = []
 let task = []
 let users = []
@@ -107,9 +108,17 @@ router.use("/del/:idendificator/:taskname", (req, res) => {
   }
 })
 
-router.use("/get/:username/:passwd", (req, res) => {
-  res.json(JSON.parse(taskpreset))
-  console.log(logprefix + "Sent all tasks to a Request")
+router.use("/get/:username/:passwd",async (req, res) => {
+  let userid = users.indexOf(req.params.username)
+  let Usertask = task[userid]
+  let response = await fetch(`${baseurl}/api/user/check/${username}/${passwd}`);
+  response = await response.json(); // converts response body -> JS object
+  
+  if (response.OK) {
+    res.json(JSON.parse(Usertask))
+  } else {
+    res.json({"OK": false, "Error": "User or password wrong!", "Message": "Coud not securely send Data."})
+  }
 })
 
 export { router }
