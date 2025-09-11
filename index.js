@@ -4,11 +4,8 @@ import fs from 'fs';
 import https from 'https';
 import http from 'http';
 import { fileURLToPath } from 'url';
+const baseurl = "http://127.0.0.1"
 
-const baseurl = "http://127.0.0.1:80"
-
-
-//Router Laden
 import {router as AchievementRouter} from "./Backend/routes/Achievements/script.js"
 import {router as ScoreRouter} from "./Backend/routes/Score/script.js"
 import {router as UserRouter} from "./Backend/routes/User-Register/script.js"
