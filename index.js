@@ -5,7 +5,7 @@ import https from 'https';
 import http from 'http';
 import { fileURLToPath } from 'url';
 
-const baseurl = "http://127.0.0.1:80"
+const baseurl = "http://127.0.0.1:2005"
 
 
 //Router Laden
@@ -22,10 +22,10 @@ const __dirname = path.dirname(__filename);
 
 
 //Ports Definieren //! Set host port on "httpsPort" and activate HTTPS
-const httpPort = 80;
-const httpsPort = 2005;
+const httpPort = 2005;
+const httpsPort = 443;
 
-// // SSL-Zertifikate laden
+// SSL-Zertifikate laden
 const certPath = path.join(__dirname, 'Cert');
 const privateKey = fs.readFileSync(path.join(certPath, 'key.pem'), 'utf8');
 const certificate = fs.readFileSync(path.join(certPath, 'cert.pem'), 'utf8');
