@@ -46,6 +46,12 @@ https://templatemo.com/tm-577-liberty-market
   gtag('config', 'G-ZLH0N7HCBP');
 </script>
 
+
+<script>
+
+</script>
+
+
   </head>
 
 <body>
@@ -67,7 +73,7 @@ https://templatemo.com/tm-577-liberty-market
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="index.html" class="active">Spiel</a></li>
-                        <li><a href="login" class="loginbutton">Ausloggen 🚪</a></li>
+                        <li><a href="#" class="loginbutton" id="startbacon">Ausloggen 🚪</a></li>
                         <li><a href="https://techsvc.de" target="_blank">⚡ by Techsvc.de</a></li>
                     </ul>   
                     <a class='menu-trigger'>
@@ -223,6 +229,24 @@ https://templatemo.com/tm-577-liberty-market
       nav.classList.toggle('active');
       menuTrigger.classList.toggle('active');
     });
+
+
+
+
+
+    // Cookies löschen beim Ausloggen
+    const logoutBtn = document.getElementById('startbacon');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Alle Cookies löschen
+        document.cookie.split(';').forEach(function(c) {
+          document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
+        });
+        // Optional: Weiterleitung zur Login-Seite
+        window.location.href = '/login';
+      });
+    }
   });
 </script>
 
