@@ -44,7 +44,9 @@ app.get('/login', (req, res) => {
 app.get('/user', (req, res) => {
   res.sendFile(path.join(__dirname, 'Frontend', 'User', 'user.html'));
 });
-
+app.get('/datenschutz', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'Datenschutz', 'datenschutz.html'));
+});
 
 app.use("/api/advancements", AchievementRouter)
 app.use("/api/score", ScoreRouter)
