@@ -34,6 +34,7 @@ const credentials = { key: privateKey, cert: certificate };
 
 app.use('/', express.static(path.join(__dirname, 'Frontend', 'Landing')));
 app.use('/login', express.static(path.join(__dirname, 'Frontend', 'login')));
+app.use('/user', express.static(path.join(__dirname, 'Frontend', 'User')));
 // app.use('/admin', express.static(path.join(__dirname, 'Frontend', 'admin-login')));
 
 app.get('/', (req, res) => {
@@ -42,14 +43,16 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'Frontend', 'login', 'login.html'));
 });
-// app.get('/admin', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'Frontend', 'admin-login', 'main.html'));
-// });
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'User', 'user.html'));
+});
+
 
 app.use("/api/advancements", AchievementRouter)
 app.use("/api/score", ScoreRouter)
 app.use("/api/user", UserRouter)
 app.use("/api/storage", SaveRouter)
+
 
 // app.get('/Main', (req, res) => {res.redirect('/')});
 // app.use("", (req, res) => {res.redirect('/')})
