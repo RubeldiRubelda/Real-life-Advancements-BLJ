@@ -53,7 +53,7 @@ async function load_tasks() {
         <div class="col-lg-2 col-sm-6">
         <div class="item">
             <div class="icon">
-                <img src="${image[i]}" alt="">
+                <img src="${image[i]}" alt="Dies ist ein Icon welches das Achievement repräsentiert.">
             </div>
             <h4>${names[i]}</h4>
             <h5 class="minifont">${hashtag[i]}</h5>
