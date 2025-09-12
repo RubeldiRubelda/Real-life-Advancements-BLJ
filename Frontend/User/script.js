@@ -36,14 +36,12 @@ async function load_tasks() {
     let hashtag = await fetch(baseurl + "/api/TDB/get/hashtag")
     let image = await fetch(baseurl + "/api/TDB/get/image")
     let description = await fetch(baseurl + "/api/TDB/get/description")
-    let usertasks = await fetch(baseurl + "/api/advancements/get/" + Username + "/" + Password)
     // let response = await fetch(baseurl + "/api/TDB/" +  Username + "/" + Password + "/" + )
     // response = await response.json()
     names = await names.json()
     hashtag = await hashtag.json()
     image = await image.json()
     description = await description.json()
-    usertasks = await usertasks.json()
 
 
 
@@ -56,28 +54,26 @@ async function load_tasks() {
     let i = 0
     tasksdiv.innerHTML = `
         <div class="section-heading">
-            <div class="line-dec"></div>
-                <h2>Aktive <em>Achievements</em>:</h2>
-            </div>
+        <div class="line-dec"></div>
+        <h2>Aktive <em>Achievements</em>:</h2>
+        </div>
         </div>`;
     while (i < names.length) {
-        if (usertasks[i]) {
-            tasksdiv.innerHTML += `
-            <div class="col-lg-2 col-sm-6">
-            <div class="item">
-                <div class="icon">
-                    <img src="${image[i]}" alt="Dies ist ein Icon welches das Achievement repräsentiert.">
-                </div>
-                <h4>${names[i]}</h4>
-                <h5 class="minifont">${hashtag[i]}</h5>
-                <div class="icon-button">
-                    <a href="#" class="show-overlay" data-index="${i}"><i class="fa fa-angle-right"></i></a>
-                </div>
+    tasksdiv.innerHTML += `
+        <div class="col-lg-2 col-sm-6">
+        <div class="item">
+            <div class="icon">
+                <img src="${image[i]}" alt="Dies ist ein Icon welches das Achievement repräsentiert.">
             </div>
+            <h4>${names[i]}</h4>
+            <h5 class="minifont">${hashtag[i]}</h5>
+            <div class="icon-button">
+                <a href="#" class="show-overlay" data-index="${i}"><i class="fa fa-angle-right"></i></a>
             </div>
-            `;
-            i++
-        }
+        </div>
+        </div>
+        `;
+        i++
     }
     // Event Listener für alle Pfeile
     setTimeout(() => {
@@ -100,6 +96,9 @@ load_tasks()
 
 
 
+
+
+
 // Overlay-DIV für Achievement-Details einfügen
 const overlayDiv = document.createElement('div');
 overlayDiv.id = 'achievement-overlay';
@@ -114,12 +113,12 @@ overlayDiv.style.zIndex = '9999';
 overlayDiv.style.justifyContent = 'center';
 overlayDiv.style.alignItems = 'center';
 overlayDiv.innerHTML = `
-  <div id="overlay-content" style="background:#2a2a2a;color:#ffffff;padding:2rem;border-radius:1rem;max-width:500px;max-height:80vh;overflow:auto;position:relative;box-shadow:0 4px 32px rgba(0,0,0,0.2);display:flex;flex-direction:column;align-items:center;">
-    <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;color:#ffffff;">&times;</span>
-    <h3 id="overlay-title" style="margin-bottom:0.5rem;text-align:center;color:#ffffff;"></h3>
+  <div id="overlay-content" style="background:#fff;padding:2rem;border-radius:1rem;max-width:500px;max-height:80vh;overflow:auto;position:relative;box-shadow:0 4px 32px rgba(0,0,0,0.2);display:flex;flex-direction:column;align-items:center;">
+    <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;">&times;</span>
+    <h3 id="overlay-title" style="margin-bottom:0.5rem;text-align:center;"></h3>
     <img id="overlay-img" src="" alt="Achievement Icon" style="width:80px;height:80px;object-fit:contain;margin-bottom:1rem;">
     <button class="button-87" role="button" style="margin-bottom:1rem;">ERLEDIGT</button>
-    <div id="overlay-text" style="text-align:center;font-size:1.1rem;color:#ffffff;"></div>
+    <div id="overlay-text" style="text-align:center;font-size:1.1rem;"></div>
   </div>
 `;
 document.body.appendChild(overlayDiv);
