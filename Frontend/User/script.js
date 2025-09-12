@@ -71,6 +71,7 @@ async function load_tasks() {
         el.addEventListener('click', function(e) {
           e.preventDefault();
           const idx = this.getAttribute('data-index');
+          document.getElementById('overlay-title').innerText = names[idx];
           document.getElementById('overlay-text').innerText = description[idx];
           document.getElementById('overlay-img').src = image[idx];
           overlayDiv.style.display = 'flex';
@@ -104,8 +105,8 @@ overlayDiv.style.alignItems = 'center';
 overlayDiv.innerHTML = `
   <div id="overlay-content" style="background:#fff;padding:2rem;border-radius:1rem;max-width:500px;max-height:80vh;overflow:auto;position:relative;box-shadow:0 4px 32px rgba(0,0,0,0.2);display:flex;flex-direction:column;align-items:center;">
     <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;">&times;</span>
+    <h3 id="overlay-title" style="margin-bottom:0.5rem;text-align:center;"></h3>
     <img id="overlay-img" src="" alt="Achievement Icon" style="width:80px;height:80px;object-fit:contain;margin-bottom:1rem;">
-    <h4>${names[i]}</h4>
     <button class="button-87" role="button" style="margin-bottom:1rem;">ERLEDIGT</button>
     <div id="overlay-text" style="text-align:center;font-size:1.1rem;"></div>
   </div>
