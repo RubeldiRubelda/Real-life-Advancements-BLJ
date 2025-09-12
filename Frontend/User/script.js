@@ -117,7 +117,7 @@ overlayDiv.innerHTML = `
     <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;color:#ffffff;">&times;</span>
     <h3 id="overlay-title" style="margin-bottom:0.5rem;text-align:center;color:#ffffff;"></h3>
     <img id="overlay-img" src="" alt="Achievement Icon" style="width:80px;height:80px;object-fit:contain;margin-bottom:1rem;">
-    <button class="button-87" role="button" style="margin-bottom:1rem;">ERLEDIGT</button>
+    <button class="button-87" role="button" style="margin-bottom:1rem;" onclick="document.getElementById('achievement-overlay').style.display='none';">ERLEDIGT</button>
     <div id="overlay-text" style="text-align:center;font-size:1.1rem;color:#ffffff;"></div>
   </div>
 `;
