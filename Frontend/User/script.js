@@ -23,7 +23,7 @@ async function load_tasks() {
         image = await image.json()
 
         let tasksdiv = document.getElementById("Container");
-        if (response.length == 0) {
+        if (names.length == 0) {
         tasksdiv.textContent = "No tasks found.";
         return;
         }
@@ -59,7 +59,7 @@ async function load_tasks() {
 
 }
 
-
+load_tasks()
 
 
 
