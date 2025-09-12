@@ -100,8 +100,6 @@ load_tasks()
 
 
 
-
-
 // Overlay-DIV für Achievement-Details einfügen
 const overlayDiv = document.createElement('div');
 overlayDiv.id = 'achievement-overlay';
