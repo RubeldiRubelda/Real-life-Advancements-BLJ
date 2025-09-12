@@ -80,6 +80,13 @@ async function load_tasks() {
 
 load_tasks()
 
+
+
+
+
+
+
+
 // Overlay-DIV für Achievement-Details einfügen
 const overlayDiv = document.createElement('div');
 overlayDiv.id = 'achievement-overlay';
@@ -95,7 +102,7 @@ overlayDiv.style.justifyContent = 'center';
 overlayDiv.style.alignItems = 'center';
 overlayDiv.innerHTML = `
   <div id="overlay-content" style="background:#fff;padding:2rem;border-radius:1rem;max-width:90vw;max-height:80vh;overflow:auto;position:relative;">
-    <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;">&times;</span>
+    <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;">&times;</span>     <button class="button-87" role="button">Button 87</button>
     <div id="overlay-text"></div>
   </div>
 `;
