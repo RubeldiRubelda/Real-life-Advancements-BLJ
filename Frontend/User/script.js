@@ -102,8 +102,8 @@ overlayDiv.style.justifyContent = 'center';
 overlayDiv.style.alignItems = 'center';
 overlayDiv.innerHTML = `
   <div id="overlay-content" style="background:#fff;padding:2rem;border-radius:1rem;max-width:90vw;max-height:80vh;overflow:auto;position:relative;">
-    <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;">&times;</span>     <button class="button-87" role="button">Button 87</button>
-    <div id="overlay-text"></div>
+    <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;">&times;</span>    
+    <div id="overlay-text">   <button class="button-87" role="button">Button 87</button></div>
   </div>
 `;
 document.body.appendChild(overlayDiv);
