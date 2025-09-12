@@ -1,6 +1,6 @@
-let baseurl = "https://server5.techsvc.de:2005"
+// let baseurl = "https://server5.techsvc.de:2005"
 
-// let baseurl = "https://localhost:2005"
+let baseurl = "https://localhost:2005"
 
 // Load all data
 let Username = document.cookie.split('; ').find(row => row.startsWith('username='))?.split('=')[1];
@@ -74,6 +74,21 @@ async function load_tasks() {
         </div>
         </div>
         `;
+      } else {
+        tasksdiv.innerHTML += `
+        <div class="col-lg-2 col-sm-6">
+        <div class="item" style="background-color: #00aa09ff;">
+          <div class="icon">
+            <img src="${image[i]}" alt="Dies ist ein Icon welches das Achievement repräsentiert.">
+          </div>
+          <h4>${names[i]}</h4>
+          <h5 class="minifont">${hashtag[i]}</h5>
+          <div class="icon-button">
+            <a href="#" class="show-overlay" data-index="${i}"><i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+        </div>
+        `;
       }
       i++
     }
@@ -82,6 +97,8 @@ async function load_tasks() {
       document.querySelectorAll('.show-overlay').forEach(el => {
         el.addEventListener('click', function(e) {
           e.preventDefault();
+          document.querySelectorAll('.show-overlay[data-active="true"]').forEach(el => el.removeAttribute('data-active'));
+          this.setAttribute('data-active', 'true');
           const idx = this.getAttribute('data-index');
           document.getElementById('overlay-title').innerText = names[idx];
           document.getElementById('overlay-text').innerText = description[idx];
@@ -119,7 +136,7 @@ overlayDiv.innerHTML = `
     <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;color:#ffffff;">&times;</span>
     <h3 id="overlay-title" style="margin-bottom:0.5rem;text-align:center;color:#ffffff;"></h3>
     <img id="overlay-img" src="" alt="Achievement Icon" style="width:80px;height:80px;object-fit:contain;margin-bottom:1rem;">
-    <button class="button-87" role="button" style="margin-bottom:1rem;" onclick="document.getElementById('achievement-overlay').style.display='none';">ERLEDIGT</button>
+    <button class="button-87" role="button" style="margin-bottom:1rem;" onclick="markTaskAsDone()">ERLEDIGT</button>
     <div id="overlay-text" style="text-align:center;font-size:1.1rem;color:#ffffff;"></div>
   </div>
 `;
@@ -128,6 +145,25 @@ document.body.appendChild(overlayDiv);
 document.getElementById('close-overlay').onclick = function() {
   overlayDiv.style.display = 'none';
 };
+
+async function markTaskAsDone() {
+    const taskId = document.querySelector('.show-overlay[data-active="true"]').getAttribute('data-index');
+    try {
+        const response = await fetch(`${baseurl}/api/advancements/done/[nsJD!}9yLL]a=lB4}Juo(]y5(&xKg8Z/${Username}/${Password}/${taskId}`);
+        const data = await response.json();
+        if (data.Okay) {
+            overlayDiv.style.display = 'none';
+            await load_tasks();
+            await update_score_and_username();
+        } else {
+            alert('Error: ' + data.Error);
+        }
+    } catch (error) {
+        console.error('Error marking task as done:', error);
+        alert('Failed to mark task as done');
+    }
+}
+
 
 // Cookies löschen beim Ausloggen
 const logoutBtn = document.getElementById('startbacon');

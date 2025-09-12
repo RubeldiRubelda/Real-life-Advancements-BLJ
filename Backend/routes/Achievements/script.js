@@ -56,12 +56,12 @@ router.use("/user/del/:idendificator/:username", (req, res) => {
   }
 })
 
-router.use("/done/:idendificator/:username/:taskid", (req, res) => {
+router.use("/done/:idendificator/:username/:passwd/:taskid",async (req, res) => {
   if (req.params.idendificator == "[nsJD!}9yLL]a=lB4}Juo(]y5(&xKg8Z") {
     let userid = users.indexOf(req.params.username)
     task[userid][req.params.taskid] = true
     res.json({"Okay": true, "Message": "Task marked as DONE"})
-    fetch(baseurl + "/api/score")
+    await fetch(baseurl + `/api/score/add/${req.params.username}/${req.params.passwd}/1`)
     console.log(logprefix + "Task: \"" + req.params.taskid + "\" marked as done for the User: \"" + req.params.username + "\"")
   } else {
     res.json({"Okay": false, "Error": "Password not correct.", "Message": "Task NOT marked as DONE"})
