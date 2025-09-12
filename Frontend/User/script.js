@@ -61,7 +61,7 @@ async function load_tasks() {
             </div>
         </div>`;
     while (i < names.length) {
-        if (usertasks[i]) {
+        if (!usertasks[i]) {
             tasksdiv.innerHTML += `
             <div class="col-lg-2 col-sm-6">
             <div class="item">
