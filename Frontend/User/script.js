@@ -43,8 +43,10 @@ async function load_tasks() {
 
     let i = 0
     tasksdiv.innerHTML = `
-        <div class="line-dec section-heading"></div>
+        <div class="section-heading">
+        <div class="line-dec"></div>
         <h2>Aktive <em>Achievements</em>:</h2>
+        </div>
         </div>`;
     while (i < names.length) {
     tasksdiv.innerHTML += `
