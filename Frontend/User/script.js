@@ -25,10 +25,9 @@ async function update_score_and_username() {
         let scorediv = document.getElementById("pints_of_user");
         scorediv.innerHTML = score.Score
     }
-
-    
 }
 
+update_score_and_username()
 
 
 async function load_tasks() {
