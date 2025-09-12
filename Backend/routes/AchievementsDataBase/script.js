@@ -1,3 +1,4 @@
+import { hash } from "crypto";
 import express from "express"
 import fs from 'fs';
 const router = express.Router()
@@ -18,17 +19,19 @@ router.use("/save", (req, res) => {
 })
 
 router.use("/load", (req, res) => {
-  disciption = JSON.parse(fs.readFileSync("./Backend/saves/advancement-description.json"))
+  hashtag = JSON.parse(fs.readFileSync("./Backend/saves/advancement-hashtag.json"))
+  description = JSON.parse(fs.readFileSync("./Backend/saves/advancement-description.json"))
   image = JSON.parse(fs.readFileSync("./Backend/saves/advancement-icon.json"))
   name = JSON.parse(fs.readFileSync("./Backend/saves/advancement-preset.json"))
-  console.log(logprefix + "Discription loaded:   " + JSON.stringify(disciption))
+  console.log(logprefix + "Hashtag loaded:   " + JSON.stringify(hashtag))
+  console.log(logprefix + "Description loaded:   " + JSON.stringify(description))
   console.log(logprefix + "Images loaded:        " + JSON.stringify(image))
   console.log(logprefix + "Names loaded:         " + JSON.stringify(name))
   res.json({"Okay": true, "Discription": "Settings Loaded"})
 })
 
-router.use("/get/discription", (req, res) => {
-    res.json(disciption)
+router.use("/get/hashtag", (req, res) => {
+    res.json(hashtag)
 })
 
 router.use("/get/image", (req, res) => {
@@ -37,5 +40,9 @@ router.use("/get/image", (req, res) => {
 
 router.use("/get/name", (req, res) => {
     res.json(name)
+})
+
+router.use("/get/description", (req, res) => {
+    res.json(description)
 })
 export { router }
