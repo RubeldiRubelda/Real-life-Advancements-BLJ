@@ -64,18 +64,30 @@ async function load_tasks() {
         <div class="col-lg-2 col-sm-6">
         <div class="item">
             <div class="icon">
-                <img src="${image[i]}" alt="">
+                <img src="${image[i]}" alt="Dies ist ein Icon welches das Achievement repräsentiert.">
             </div>
             <h4>${names[i]}</h4>
             <h5 class="minifont">${hashtag[i]}</h5>
             <div class="icon-button">
-                <a href="${i}"><i class="fa fa-angle-right"></i></a>
+                <a href="#" class="show-overlay" data-index="${i}"><i class="fa fa-angle-right"></i></a>
             </div>
         </div>
         </div>
         `;
         i++
     }
+    // Event Listener für alle Pfeile
+    setTimeout(() => {
+      document.querySelectorAll('.show-overlay').forEach(el => {
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          const idx = this.getAttribute('data-index');
+          document.getElementById('overlay-text').innerText = description[idx];
+          document.getElementById('overlay-img').src = image[idx];
+          overlayDiv.style.display = 'flex';
+        });
+      });
+    }, 0);
 }
 
 load_tasks()
@@ -84,6 +96,36 @@ load_tasks()
 
 
 
+
+
+
+// Overlay-DIV für Achievement-Details einfügen
+const overlayDiv = document.createElement('div');
+overlayDiv.id = 'achievement-overlay';
+overlayDiv.style.display = 'none';
+overlayDiv.style.position = 'fixed';
+overlayDiv.style.top = '0';
+overlayDiv.style.left = '0';
+overlayDiv.style.width = '100vw';
+overlayDiv.style.height = '100vh';
+overlayDiv.style.background = 'rgba(0,0,0,0.7)';
+overlayDiv.style.zIndex = '9999';
+overlayDiv.style.justifyContent = 'center';
+overlayDiv.style.alignItems = 'center';
+overlayDiv.innerHTML = `
+  <div id="overlay-content" style="background:#fff;padding:2rem;border-radius:1rem;max-width:500px;max-height:80vh;overflow:auto;position:relative;box-shadow:0 4px 32px rgba(0,0,0,0.2);display:flex;flex-direction:column;align-items:center;">
+    <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;">&times;</span>
+    <img id="overlay-img" src="" alt="Achievement Icon" style="width:80px;height:80px;object-fit:contain;margin-bottom:1rem;">
+    <h4>${names[i]}</h4>
+    <button class="button-87" role="button" style="margin-bottom:1rem;">ERLEDIGT</button>
+    <div id="overlay-text" style="text-align:center;font-size:1.1rem;"></div>
+  </div>
+`;
+document.body.appendChild(overlayDiv);
+
+document.getElementById('close-overlay').onclick = function() {
+  overlayDiv.style.display = 'none';
+};
 
 // Cookies löschen beim Ausloggen
 const logoutBtn = document.getElementById('startbacon');
