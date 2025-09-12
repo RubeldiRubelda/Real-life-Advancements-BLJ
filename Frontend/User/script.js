@@ -59,7 +59,7 @@ async function load_tasks() {
 
 }
 
-
+load_tasks()
 
 
 
