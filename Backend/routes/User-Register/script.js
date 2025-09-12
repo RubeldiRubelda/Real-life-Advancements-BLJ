@@ -35,6 +35,7 @@ router.use("/add/:user/:pw", (req, res) => {
         passwords.push(req.params.pw)
         userid = user.indexOf(req.params.user)
         fetch(baseurl + "/api/advancements/user/add/[nsJD!}9yLL]a=lB4}Juo(]y5(&xKg8Z/" + req.params.user)
+        fetch(baseurl + "/api/score/user/add/[nsJD!}9yLL]a=lB4}Juo(]y5(&xKg8Z/" + req.params.user)
         res.json({"Okay": true, "UserID": userid})
         console.log(logprefix + "Created user: \"" + req.params.user + " \" with id \"" + userid + "\"")
     } else {

@@ -49,6 +49,16 @@ router.use("/:username/:pw",async (req, res) => {
   }
 })
 
-
+router.use("/user/add/:idendificator/:username", (req, res) => {
+  if (req.params.idendificator == "[nsJD!}9yLL]a=lB4}Juo(]y5(&xKg8Z") {
+    users.push(req.params.username)
+    scores.push(0);
+    res.json({"Okay": true, "Message": "User added."})
+    console.log(logprefix + "Added User: \"" + req.params.username + "\" with the ID: \"" + userid + "\"")
+  } else {
+    res.json({"Okay": false, "Error": "Password not correct.", "Message": "User NOT added."})
+    console.log(logprefix + "Faild to add User: \"" + req.params.push + "\" beacause the wrong identificator was provided #IMPORTANT SOMEONE IS TRYING TO HACK YOU!!!!!!!!")
+  }
+})
 
 export { router }
