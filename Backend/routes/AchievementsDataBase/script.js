@@ -6,6 +6,7 @@ const logprefix = "TaskDBRouter:           "
 let disciption = []
 let image = []
 let name = []
+let hashtag = []
 
 
 router.use("/save", (req, res) => {
