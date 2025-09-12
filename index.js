@@ -4,7 +4,6 @@ import fs from 'fs';
 import https from 'https';
 import http from 'http';
 import { fileURLToPath } from 'url';
-import Greenlock from "greenlock-express";
 const baseurl = "http://127.0.0.1"
 
 import {router as AchievementRouter} from "./Backend/routes/Achievements/script.js"
@@ -84,18 +83,6 @@ https.createServer(credentials, app).listen(httpsPort, () => {
 
 
 
-
-// Greenlock-Setup
-Greenlock.init({
-  packageRoot: __dirname,          // Projektordner
-  configDir: "./.greenlock.d",     // dort speichert Greenlock Zertifikate
-  maintainerEmail: "benjamin.kunz.ch@gmail.com",
-  cluster: false,
-  // wichtig: nutze den Port, den Pterodactyl dir gibt (z. B. 2005)
-  // Greenlock öffnet normalerweise 80/443 → wir überschreiben das
-  httpOptions: { port: 8080 },     // für ACME Challenge, nur intern
-  httpsOptions: { port: 2005 }     // dein richtiger HTTPS Port
-}).serve(app);
 
 
 
