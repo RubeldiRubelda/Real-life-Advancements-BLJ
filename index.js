@@ -29,15 +29,16 @@ const privateKey = fs.readFileSync(path.join(certPath, 'key.pem'), 'utf8');
 const certificate = fs.readFileSync(path.join(certPath, 'cert.pem'), 'utf8');
 const credentials = { key: privateKey, cert: certificate };
 
-
+//Additional file like CSS and JS or IMG's
 app.use('/', express.static(path.join(__dirname, 'Frontend', 'Landing')));
 app.use('/login', express.static(path.join(__dirname, 'Frontend', 'login')));
 app.use('/user', express.static(path.join(__dirname, 'Frontend', 'User')));
 app.use('/datenschutz', express.static(path.join(__dirname, 'Frontend', 'Datenschutz')));
 app.use('/register', express.static(path.join(__dirname, 'Frontend', 'register')));
-app.use('/images', express.static(path.join(__dirname, 'Frontend', 'User', 'assets', 'images')));
-// app.use('/admin', express.static(path.join(__dirname, 'Frontend', 'admin-login')));
+app.use('/images', express.static(path.join(__dirname, 'Frontend', 'User', 'assets', 'images'))); //for frontend images 
 
+
+//Webpages
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'Frontend', 'Landing', 'index.html'));
 });
@@ -54,14 +55,17 @@ app.get('/datenschutz', (req, res) => {
   res.sendFile(path.join(__dirname, 'Frontend', 'Datenschutz', 'datenschutz.html'));
 });
 
+//Router Config
 app.use("/api/advancements", AchievementRouter)
 app.use("/api/score", ScoreRouter)
 app.use("/api/user", UserRouter)
 app.use("/api/storage", SaveRouter)
 app.use("/api/TDB", TaskDBRouter)
 
-// app.get('/Main', (req, res) => {res.redirect('/')});
-// app.use("", (req, res) => {res.redirect('/')})
+
+// Redirect Config
+app.get('/Main', (req, res) => res.redirect('/'));
+app.use((req, res) => {res.redirect('/');});
 
 
 // //HTTP-Server
