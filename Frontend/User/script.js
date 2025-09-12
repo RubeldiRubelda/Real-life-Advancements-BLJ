@@ -12,11 +12,22 @@ if (Username == "") {
     console.log("Username: " + Username)
 }
 
-// Add Username
-let usernamediv = document.getElementById("usernameofuser");
-usernamediv.innerHTML = Username.charAt(0).toUpperCase() + Username.slice(1);
 
+async function update_score_and_username() {
+    //Username form Cookie
+    let usernamediv = document.getElementById("username_of_user");
+    usernamediv.innerHTML = Username.charAt(0).toUpperCase() + Username.slice(1);
 
+    //Score form Backend
+    let score = await fetch(baseurl + "/api/score/" + Username + "/" + Password);
+    score = await score.json();
+    if (score.Okay) {
+        let scorediv = document.getElementById("pints_of_user");
+        scorediv.innerHTML = score.Score
+    }
+
+    
+}
 
 
 
