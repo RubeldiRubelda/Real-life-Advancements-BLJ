@@ -59,21 +59,21 @@ async function load_tasks() {
         </div>
         </div>`;
     while (i < names.length) {
-    tasksdiv.innerHTML += `
-        <div class="col-lg-2 col-sm-6">
-        <div class="item">
-            <div class="icon">
-                <img src="${image[i]}" alt="Dies ist ein Icon welches das Achievement repräsentiert.">
+            tasksdiv.innerHTML += `
+            <div class="col-lg-2 col-sm-6">
+            <div class="item">
+                <div class="icon">
+                    <img src="${image[i]}" alt="Dies ist ein Icon welches das Achievement repräsentiert.">
+                </div>
+                <h4>${names[i]}</h4>
+                <h5 class="minifont">${hashtag[i]}</h5>
+                <div class="icon-button">
+                    <a href="#" class="show-overlay" data-index="${i}"><i class="fa fa-angle-right"></i></a>
+                </div>
             </div>
-            <h4>${names[i]}</h4>
-            <h5 class="minifont">${hashtag[i]}</h5>
-            <div class="icon-button">
-                <a href="#" class="show-overlay" data-index="${i}"><i class="fa fa-angle-right"></i></a>
             </div>
-        </div>
-        </div>
-        `;
-        i++
+            `;
+            i++
     }
     // Event Listener für alle Pfeile
     setTimeout(() => {
