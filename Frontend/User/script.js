@@ -1,6 +1,6 @@
-// let baseurl = "https://server5.techsvc.de:2005"
+let baseurl = "https://server5.techsvc.de:2005"
 
-let baseurl = "https://localhost:2005"
+// let baseurl = "https://localhost:2005"
 
 // Load all data
 let Username = document.cookie.split('; ').find(row => row.startsWith('username='))?.split('=')[1];
@@ -10,51 +10,47 @@ let Password = document.cookie.split('; ').find(row => row.startsWith('password=
 let usernamediv = document.getElementById("usernameofuser");
 usernamediv.innerHTML = Username.charAt(0).toUpperCase() + Username.slice(1);
 
-let tasksdiv = document.getElementById("Container");
-      tasksdiv.innerHTML = `
-          <div class="section-heading">
-            <div class="line-dec"></div>
-            <h2>Aktive <em>Achievements Test</em>:</h2>
-          </div>`;
 
 async function load_tasks() {
-  try {
-    let response = await fetch(basedomain + "/api/task/all/" + Username + "/" + (new Date().getDay()))
-    response = await response.json()
+    try {
+        let names = await fetch(baseurl + "/api/TDB/get/name")
+        let disciptions = await fetch(baseurl + "/api/TDB/get/discription")
+        let image = await fetch(baseurl + "/api/TDB/get/image")
+        // let response = await fetch(baseurl + "/api/TDB/" +  Username + "/" + Password + "/" + )
+        // response = await response.json()
+        names = await names.json()
+        disciptions = await disciptions.json()
+        image = await image.json()
 
-    let tasksdiv = document.getElementById("Container");
-    if (Array.isArray(response)) {
-      if (response.length == 0) {
+        let tasksdiv = document.getElementById("Container");
+        if (response.length == 0) {
         tasksdiv.textContent = "No tasks found.";
         return;
-      }
+        }
 
-      let i = 0
-      tasksdiv.innerHTML = `
-          <div class="section-heading">
+        let i = 0
+        tasksdiv.innerHTML = `
+            <div class="section-heading">
             <div class="line-dec"></div>
             <h2>Aktive <em>Achievements Test</em>:</h2>
-          </div>`;
-      while (i < response.length) {
+            </div>`;
+        while (i < names.length) {
         tasksdiv.innerHTML += `
             <div class="col-lg-2 col-sm-6">
             <div class="item">
                 <div class="icon">
-                    <img src="${IMAGE}" alt="">
+                    <img src="${image[i]}" alt="">
                 </div>
-                <h4>${Name}</h4>
-                <h5 class="minifont">${Discription}</h5>
+                <h4>${names[i]}</h4>
+                <h5 class="minifont">${disciptions[i]}</h5>
                 <div class="icon-button">
                     <a href="${i}"><i class="fa fa-angle-right"></i></a>
                 </div>
             </div>
             </div>
-        `;
-        i++
-      }
-    } else {
-      console.error("Not array for tasks returned: ", response.Error)
-    }
+            `;
+            i++
+        }
   } catch (error) {
     document.getElementById('task-list').textContent = "Failed to load tasks.";
     console.error(error);
