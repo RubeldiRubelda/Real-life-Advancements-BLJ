@@ -61,6 +61,7 @@ router.use("/done/:idendificator/:username/:taskid", (req, res) => {
     let userid = users.indexOf(req.params.username)
     task[userid][req.params.taskid] = true
     res.json({"Okay": true, "Message": "Task marked as DONE"})
+    fetch(baseurl + "/api/score")
     console.log(logprefix + "Task: \"" + req.params.taskid + "\" marked as done for the User: \"" + req.params.username + "\"")
   } else {
     res.json({"Okay": false, "Error": "Password not correct.", "Message": "Task NOT marked as DONE"})

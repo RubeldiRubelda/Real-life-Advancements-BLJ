@@ -1,2 +1,5 @@
 LOG/*
 .vscode/
+/Backend/saves/passwords.json
+/Backend/saves/user.json
+/Backend/saves/advancement-user.json
