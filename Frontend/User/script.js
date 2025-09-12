@@ -58,21 +58,52 @@ async function load_tasks() {
             <h4>${names[i]}</h4>
             <h5 class="minifont">${hashtag[i]}</h5>
             <div class="icon-button">
-                <a href="${i}"><i class="fa fa-angle-right"></i></a>
+                <a href="#" class="show-overlay" data-index="${i}"><i class="fa fa-angle-right"></i></a>
             </div>
         </div>
         </div>
         `;
         i++
     }
+    // Event Listener für alle Pfeile
+    setTimeout(() => {
+      document.querySelectorAll('.show-overlay').forEach(el => {
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          const idx = this.getAttribute('data-index');
+          document.getElementById('overlay-text').innerText = description[idx];
+          overlayDiv.style.display = 'flex';
+        });
+      });
+    }, 0);
 }
 
 load_tasks()
 
+// Overlay-DIV für Achievement-Details einfügen
+const overlayDiv = document.createElement('div');
+overlayDiv.id = 'achievement-overlay';
+overlayDiv.style.display = 'none';
+overlayDiv.style.position = 'fixed';
+overlayDiv.style.top = '0';
+overlayDiv.style.left = '0';
+overlayDiv.style.width = '100vw';
+overlayDiv.style.height = '100vh';
+overlayDiv.style.background = 'rgba(0,0,0,0.7)';
+overlayDiv.style.zIndex = '9999';
+overlayDiv.style.justifyContent = 'center';
+overlayDiv.style.alignItems = 'center';
+overlayDiv.innerHTML = `
+  <div id="overlay-content" style="background:#fff;padding:2rem;border-radius:1rem;max-width:90vw;max-height:80vh;overflow:auto;position:relative;">
+    <span id="close-overlay" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:2rem;">&times;</span>
+    <div id="overlay-text"></div>
+  </div>
+`;
+document.body.appendChild(overlayDiv);
 
-
-
-
+document.getElementById('close-overlay').onclick = function() {
+  overlayDiv.style.display = 'none';
+};
 
 // Cookies löschen beim Ausloggen
 const logoutBtn = document.getElementById('startbacon');
