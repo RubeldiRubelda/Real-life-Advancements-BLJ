@@ -1,6 +1,6 @@
-let baseurl = "https://server5.techsvc.de:2005"
+// let baseurl = "https://server5.techsvc.de:2005"
 
-// let baseurl = "https://localhost:2005"
+let baseurl = "https://localhost:2005"
 
 // Load all data
 let Username = document.cookie.split('; ').find(row => row.startsWith('username='))?.split('=')[1];
@@ -8,8 +8,6 @@ let Password = document.cookie.split('; ').find(row => row.startsWith('password=
 
 if (Username == "") {
     window.location.href = '/login'
-} else {
-    console.log("Username: " + Username)
 }
 
 
@@ -36,12 +34,14 @@ async function load_tasks() {
     let hashtag = await fetch(baseurl + "/api/TDB/get/hashtag")
     let image = await fetch(baseurl + "/api/TDB/get/image")
     let description = await fetch(baseurl + "/api/TDB/get/description")
+    let usertasks = await fetch(baseurl + "/api/advancements/get/" + Username + "/" + Password)
     // let response = await fetch(baseurl + "/api/TDB/" +  Username + "/" + Password + "/" + )
     // response = await response.json()
     names = await names.json()
     hashtag = await hashtag.json()
     image = await image.json()
     description = await description.json()
+    usertasks = await usertasks.json()
 
 
 
@@ -59,6 +59,8 @@ async function load_tasks() {
         </div>
         </div>`;
     while (i < names.length) {
+
+        if (usertasks[i]) {
             tasksdiv.innerHTML += `
             <div class="col-lg-2 col-sm-6">
             <div class="item">
@@ -74,6 +76,7 @@ async function load_tasks() {
             </div>
             `;
             i++
+        }
     }
     // Event Listener für alle Pfeile
     setTimeout(() => {

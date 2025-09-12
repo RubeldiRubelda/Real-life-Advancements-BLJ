@@ -83,15 +83,15 @@ router.use("/check/:user/:pw", (req, res) => {
     let userid = user.indexOf(req.params.user)
     if (userid == -1) {
         res.json({"Okay": false, "Error": "User or Password dose not exist do not match."})
-        console.log(logprefix + "User: \"" + req.params.user + "\" tryed to log in but he is not registerd.")
+        console.log(logprefix + "User: \"" + req.params.user + "\" tryed to check in but he is not registerd.")
     } else {
         let passwd = passwords[userid]
         if (passwd == req.params.pw) {
             res.json({"Okay": true, "UserID": userid})
-            console.log(logprefix + "User: \"" + req.params.user + "\" logged in with id: \"" + userid + "\" succesfully.")
+            console.log(logprefix + "User: \"" + req.params.user + "\" checked in with id: \"" + userid + "\" succesfully.")
         } else {
             res.json({"Okay": false, "Error": "User or Password dose not exist do not match."})
-            console.log(logprefix + "User: \"" + req.params.user + "\" with id: \"" + userid + "\" tryed to log in but the password was wrong.")
+            console.log(logprefix + "User: \"" + req.params.user + "\" with id: \"" + userid + "\" tryed to check in but the password was wrong.")
         }
     }
 })

@@ -111,12 +111,12 @@ router.use("/del/:idendificator/:taskname", (req, res) => {
 
 router.use("/get/:username/:passwd",async (req, res) => {
   let userid = users.indexOf(req.params.username)
-  let Usertask = task[userid]
-  let response = await fetch(`${baseurl}/api/user/check/${username}/${passwd}`);
+  if (userid == -1) {res.json({"Okay": false, "Error": "Username not found."}); return;}
+  let response = await fetch(`${baseurl}/api/user/check/${req.params.username}/${req.params.passwd}`);
   response = await response.json(); // converts response body -> JS object
   
   if (response.Okay) {
-    res.json(JSON.parse(Usertask))
+    res.json(task[userid])
   } else {
     res.json({"Okay": false, "Error": "User or password wrong!", "Message": "Coud not securely send Data."})
   }
