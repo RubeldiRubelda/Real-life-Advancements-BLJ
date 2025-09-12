@@ -35,7 +35,7 @@ app.use('/login', express.static(path.join(__dirname, 'Frontend', 'login')));
 app.use('/user', express.static(path.join(__dirname, 'Frontend', 'User')));
 app.use('/datenschutz', express.static(path.join(__dirname, 'Frontend', 'Datenschutz')));
 app.use('/register', express.static(path.join(__dirname, 'Frontend', 'register')));
-
+app.use('/images', express.static(path.join(__dirname, 'Frontend', 'User', 'assets', 'images')));
 // app.use('/admin', express.static(path.join(__dirname, 'Frontend', 'admin-login')));
 
 app.get('/', (req, res) => {
