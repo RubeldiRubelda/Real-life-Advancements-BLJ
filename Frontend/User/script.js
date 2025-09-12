@@ -140,3 +140,4 @@ if (logoutBtn) {
     window.location.href = '/';
     });
 }
+
