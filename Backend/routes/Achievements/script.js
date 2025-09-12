@@ -39,7 +39,7 @@ router.use("/user/add/:idendificator/:username", (req, res) => {
     console.log(logprefix + "Added User: \"" + req.params.username + "\" with the ID: \"" + userid + "\"")
   } else {
     res.json({"Okay": false, "Error": "Password not correct.", "Message": "User NOT added."})
-    console.log(logprefix + "Faild to add User: \"" + req.params.push + "\" beacause the wrong identificator was provided #IMPORTANT SOMEONE IS TRYING TO HACK YOU!!!!!!!!")
+    console.log(logprefix + "Faild to add User: \"" + req.params.username + "\" beacause the wrong identificator was provided #IMPORTANT SOMEONE IS TRYING TO HACK YOU!!!!!!!!")
   }
 })
 
