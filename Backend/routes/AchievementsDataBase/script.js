@@ -3,7 +3,7 @@ import express from "express"
 import fs from 'fs';
 const router = express.Router()
 const logprefix = "TaskDBRouter:           "
-let disciption = []
+let description = []
 let image = []
 let name = []
 let hashtag = []
