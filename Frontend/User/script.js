@@ -10,8 +10,12 @@ let Password = document.cookie.split('; ').find(row => row.startsWith('password=
 let usernamediv = document.getElementById("usernameofuser");
 usernamediv.innerHTML = Username.charAt(0).toUpperCase() + Username.slice(1);
 
-
-
+let tasksdiv = document.getElementById("Container");
+      tasksdiv.innerHTML = `
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h2>Aktive <em>Achievements Test</em>:</h2>
+          </div>`;
 
 async function load_tasks() {
   try {
