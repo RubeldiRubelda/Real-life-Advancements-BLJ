@@ -85,18 +85,17 @@ https.createServer(credentials, app).listen(httpsPort, () => {
 
 
 
-
-
+// Greenlock-Setup
 Greenlock.init({
-  packageRoot: __dirname,
-  configDir: "./.greenlock.d", // speichert Zertifikate
+  packageRoot: __dirname,          // Projektordner
+  configDir: "./.greenlock.d",     // dort speichert Greenlock Zertifikate
   maintainerEmail: "benjamin.kunz.ch@gmail.com",
-  cluster: false
+  cluster: false,
+  // wichtig: nutze den Port, den Pterodactyl dir gibt (z. B. 2005)
+  // Greenlock öffnet normalerweise 80/443 → wir überschreiben das
+  httpOptions: { port: 8080 },     // für ACME Challenge, nur intern
+  httpsOptions: { port: 2005 }     // dein richtiger HTTPS Port
 }).serve(app);
-
-
-
-
 
 
 
