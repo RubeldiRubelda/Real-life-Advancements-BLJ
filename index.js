@@ -4,6 +4,7 @@ import fs from 'fs';
 import https from 'https';
 import http from 'http';
 import { fileURLToPath } from 'url';
+import Greenlock from "greenlock-express";
 const baseurl = "http://127.0.0.1"
 
 import {router as AchievementRouter} from "./Backend/routes/Achievements/script.js"
@@ -77,6 +78,26 @@ http.createServer(app).listen(httpPort, () => {
 https.createServer(credentials, app).listen(httpsPort, () => {
   console.log(`HTTPS server running on port ${httpsPort}`);
 });
+
+
+
+
+
+
+
+
+
+Greenlock.init({
+  packageRoot: __dirname,
+  configDir: "./.greenlock.d", // speichert Zertifikate
+  maintainerEmail: "benjamin.kunz.ch@gmail.com",
+  cluster: false
+}).serve(app);
+
+
+
+
+
 
 
 // Log
