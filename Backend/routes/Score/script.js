@@ -3,7 +3,7 @@ import fs from 'fs';
 const router = express.Router()
 const logprefix = "ScoreRouter:            "
 const baseurl = "http://127.0.0.1:80"
-let scores = []
+let scores = [0, 1, 3]
 let users = []
 
 router.use("/save", (req, res) => {
