@@ -27,7 +27,9 @@ router.use("/add/:username/:pw/:scoretoadd",async (req, res) => {
   response = await response.json()
   if (response.Okay) {
     let userid = users.indexOf(req.params.username)
-    scores[userid] += req.params.scoretoadd
+    let buffer = parseInt(scores[userid], 10) 
+    buffer += req.params.scoretoadd
+    scores[userid] = buffer
     res.json({"Okay": true, "Score": scores[userid]})
     console.log(logprefix + "User: \"" + req.params.username + "\" with ID: \"" + userid + "\" got added Score: \"" + JSON.stringify(scores[userid]))
   } else {
@@ -39,7 +41,8 @@ router.use("/add/:username/:pw/:scoretoadd",async (req, res) => {
 router.use("/user/add/:idendificator/:username", (req, res) => {
   users.push(req.params.username)
   console.log(users)
-  scores.push(0);
+  let buffer = parseInt("0", 10)
+  scores.push(buffer);
   console.log(scores)
   res.json({"Okay": true, "Message": "User added."})
   console.log(logprefix + "Added User: \"" + req.params.username + "\" with the ID: \"" + userid + "\"")
