@@ -77,7 +77,7 @@ async function load_tasks() {
       } else {
         tasksdiv.innerHTML += `
         <div class="col-lg-2 col-sm-6">
-        <div class="item" style="background-color: #00aa09ff;">
+        <div class="item" style="background-color: #2feb00ff;">
           <div class="icon">
             <img src="${image[i]}" alt="Dies ist ein Icon welches das Achievement repräsentiert.">
           </div>
