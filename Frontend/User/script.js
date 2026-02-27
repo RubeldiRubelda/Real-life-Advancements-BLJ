@@ -1,4 +1,5 @@
-let baseurl = "https://server5.techsvc.de:2005"
+let baseurl = "https://67
+69.benjamink.ch:443"
 
 // let baseurl = "https://localhost:2005"
 
